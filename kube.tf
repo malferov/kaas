@@ -1,5 +1,8 @@
-variable "master_user" {}
-variable "master_pass" {}
+variable "master_user" {
+}
+
+variable "master_pass" {
+}
 
 locals {
   kubeconfig = <<KUBECONFIG
@@ -23,6 +26,7 @@ users:
     username: ${var.master_user}
     password: ${var.master_pass}
 KUBECONFIG
+
 }
 
 resource "google_container_cluster" "kube" {
@@ -35,8 +39,8 @@ resource "google_container_cluster" "kube" {
   ]
 
   master_auth {
-    username = "${var.master_user}"
-    password = "${var.master_pass}"
+    username = var.master_user
+    password = var.master_pass
   }
 
   node_config {
@@ -48,3 +52,4 @@ resource "google_container_cluster" "kube" {
     ]
   }
 }
+
