@@ -1,0 +1,5 @@
+.key
+.terraform
+*tfvars*
+*tfplan*
+*tfstate*
