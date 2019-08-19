@@ -31,10 +31,10 @@ KUBECONFIG
 
 resource "google_container_cluster" "kube" {
   name               = "kube"
-  zone               = "${var.region}-a"
+  location           = "${var.region}-a"
   initial_node_count = 2
 
-  additional_zones = [
+  node_locations = [
     "${var.region}-b",
   ]
 
