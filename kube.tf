@@ -29,6 +29,11 @@ KUBECONFIG
 
 }
 
+resource "local_file" "kubeconfig" {
+  content  = local.kubeconfig
+  filename = pathexpand("~/.kube/config")
+}
+
 resource "google_container_cluster" "kube" {
   name               = "kube"
   location           = "${var.region}-a"
