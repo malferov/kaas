@@ -11,11 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - name: looking around
+    - name: terraform apply
       run: |
-        printenv
-        ls -la
-        pwd
         terraform --version
-        cat /etc/*release
-        uname -a
+        terraform init
+        terraform validate
+        terraform plan
