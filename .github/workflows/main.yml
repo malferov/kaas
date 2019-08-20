@@ -11,12 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - secrets: SECRET
     - name: expose
       run: echo $SECRET
     - name: terraform apply
       run: |
         terraform --version
-        terraform init
-        terraform validate
-        terraform plan
+#        terraform init
+#        terraform validate
+#        terraform plan
