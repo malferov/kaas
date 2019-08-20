@@ -12,7 +12,9 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: expose
-      run: echo $SECRET
+      with:
+        SECRET: ${{ secrets.SECRET }}
+      run: echo "$SECRET"
     - name: terraform apply
       run: |
         terraform --version
