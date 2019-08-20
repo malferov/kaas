@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: expose
-      with:
+      env:
         SECRET: ${{ secrets.SECRET }}
       run: echo "$SECRET"
     - name: terraform apply
