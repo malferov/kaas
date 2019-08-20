@@ -4,16 +4,18 @@ on:
   push:
     branches:
     - master
-jobs:
-  build:
+    - feature/*
 
+jobs:
+  apply:
     runs-on: ubuntu-latest
-    
     steps:
     - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
+    - name: looking around
       run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+        printenv
+        ls -la
+        pwd
+        terraform --version
+        cat /etc/*release
+        uname -a
