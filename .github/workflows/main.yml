@@ -7,17 +7,21 @@ on:
     - feature/*
 
 jobs:
-  apply:
+  deploy:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - name: expose
+    - name: terraform apply
       env:
         SECRET: ${{ secrets.SECRET }}
       run: echo "$SECRET"
-    - name: terraform apply
+      run: |
+        mkdir .key
+        echo '{"name"="secret"}' > .key/account.json
+        cat .key/account.json
+        jq . .key/account.json
       run: |
         terraform --version
-#        terraform init
+        terraform init
 #        terraform validate
 #        terraform plan
