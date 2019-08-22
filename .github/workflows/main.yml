@@ -19,7 +19,7 @@ jobs:
         mkdir .key
         echo '{"name"="secret"}' > .key/account.json
         cat .key/account.json
-        jq ".name" .key/account.json
+        jq --version
         terraform --version
 #        terraform init
 #        terraform validate
