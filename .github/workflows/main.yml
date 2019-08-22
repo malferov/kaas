@@ -22,5 +22,5 @@ jobs:
         jq --version
         terraform --version
         terraform init
-#        terraform validate
+        terraform validate
 #        terraform plan
