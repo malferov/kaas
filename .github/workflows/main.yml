@@ -21,6 +21,6 @@ jobs:
         cat .key/account.json
         jq --version
         terraform --version
-#        terraform init
+        terraform init
 #        terraform validate
 #        terraform plan
