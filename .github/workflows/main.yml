@@ -14,13 +14,12 @@ jobs:
     - name: terraform apply
       env:
         SECRET: ${{ secrets.SECRET }}
-      run: echo "$SECRET"
       run: |
+        echo "$SECRET"
         mkdir .key
         echo '{"name"="secret"}' > .key/account.json
         cat .key/account.json
         jq . .key/account.json
-      run: |
         terraform --version
         terraform init
 #        terraform validate
