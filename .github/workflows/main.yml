@@ -13,11 +13,8 @@ jobs:
     - uses: actions/checkout@v1
     - name: terraform apply
       env:
-        SECRET: ${{ secrets.SECRET }}
+        TF_VAR_account_key: ${{ secrets.SECRET }}
       run: |
-        echo "$SECRET"
-        mkdir .key
-        echo '{"name":"secret"}' > .key/account.json
         terraform init
         terraform validate
 #        terraform plan
