@@ -17,10 +17,7 @@ jobs:
       run: |
         echo "$SECRET"
         mkdir .key
-        echo '{"name"="secret"}' > .key/account.json
-        cat .key/account.json
-        jq --version
-        terraform --version
+        echo '{"name":"secret"}' > .key/account.json
         terraform init
         terraform validate
 #        terraform plan
