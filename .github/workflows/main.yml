@@ -13,7 +13,12 @@ jobs:
     - uses: actions/checkout@v1
     - name: terraform apply
       env:
-        TF_VAR_account_key: ${{ secrets.SECRET }}
+        TF_VAR_account_key: ${{ secrets.account_key }}
+        TF_VAR_project: ${{ secrets.project }}
+        TF_VAR_region: ${{ secrets.region }}
+        TF_VAR_zone: ${{ secrets.zone }}
+        TF_VAR_master_user: ${{ secrets.master_user }}
+        TF_VAR_master_pass: ${{ secrets.master_pass }}
       run: |
         terraform init
         terraform validate
