@@ -13,3 +13,11 @@ For students, open-source developers or hobby projects, we offer a generous free
 
 ### Development
 The platform uses Infrastructure as Code and Continuous Delivery principles via Terraform and Github Actions frameworks.
+```
+# setup local environment
+git checkout master
+echo $token > backend.hcl
+terraform init -backend-config=backend.hcl
+terraform apply
+export KUBECONFIG=.kube/config
+```
