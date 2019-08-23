@@ -20,6 +20,8 @@ jobs:
         TF_VAR_master_user: ${{ secrets.master_user }}
         TF_VAR_master_pass: ${{ secrets.master_pass }}
       run: |
-        terraform init
-        terraform validate
-        terraform plan
+        echo "$HOME"
+        pwd
+#        terraform init
+#        terraform validate
+#        terraform plan
