@@ -25,3 +25,4 @@ jobs:
         terraform init -backend-config=backend.hcl
         terraform validate
         terraform plan
+        terraform apply
