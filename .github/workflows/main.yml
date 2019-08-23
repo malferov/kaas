@@ -24,5 +24,4 @@ jobs:
         echo "$backend" > backend.hcl
         terraform init -backend-config=backend.hcl
         terraform validate
-        terraform plan
-        terraform apply
+        terraform apply -auto-approve
