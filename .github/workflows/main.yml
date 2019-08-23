@@ -19,9 +19,9 @@ jobs:
         TF_VAR_zone: ${{ secrets.zone }}
         TF_VAR_master_user: ${{ secrets.master_user }}
         TF_VAR_master_pass: ${{ secrets.master_pass }}
+        backend: ${{ secrets.backend }}
       run: |
-        echo "$HOME"
-        pwd
-#        terraform init
-#        terraform validate
+        echo "$backend" > backend.hcl
+        terraform init -backend-config=backend.hcl
+        terraform validate
 #        terraform plan
