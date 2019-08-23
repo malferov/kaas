@@ -31,7 +31,7 @@ KUBECONFIG
 
 resource "local_file" "kubeconfig" {
   content  = local.kubeconfig
-  filename = pathexpand("~/.kube/config")
+  filename = ".kube/config"
 }
 
 resource "google_container_cluster" "kube" {

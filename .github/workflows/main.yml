@@ -4,16 +4,23 @@ on:
   push:
     branches:
     - master
-jobs:
-  build:
 
+jobs:
+  deploy:
     runs-on: ubuntu-latest
-    
     steps:
     - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
+    - name: terraform apply
+      env:
+        TF_VAR_account_key: ${{ secrets.account_key }}
+        TF_VAR_project: ${{ secrets.project }}
+        TF_VAR_region: ${{ secrets.region }}
+        TF_VAR_zone: ${{ secrets.zone }}
+        TF_VAR_master_user: ${{ secrets.master_user }}
+        TF_VAR_master_pass: ${{ secrets.master_pass }}
+        backend: ${{ secrets.backend }}
       run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+        echo "$backend" > backend.hcl
+        terraform init -backend-config=backend.hcl
+        terraform validate
+        terraform apply -auto-approve

@@ -3,3 +3,5 @@
 *tfvars*
 *tfplan*
 *tfstate*
+backend.hcl
+.kube
