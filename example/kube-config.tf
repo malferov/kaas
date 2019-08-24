@@ -28,5 +28,5 @@ KUBECONFIG
 
 resource "local_file" "kube_config" {
   content  = local.kube_config
-  filename = ".kube/config"
+  filename = pathexpand("~/.kube/config")
 }

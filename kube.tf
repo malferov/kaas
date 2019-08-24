@@ -1,7 +1,10 @@
+variable "master_user" {}
+variable "master_pass" {}
+
 resource "google_container_cluster" "kube" {
   name               = "kube"
   location           = "${var.region}-a"
-  initial_node_count = 2
+  initial_node_count = 1
 
   node_locations = [
     "${var.region}-b",
@@ -13,6 +16,7 @@ resource "google_container_cluster" "kube" {
   }
 
   node_config {
+    disk_size_gb = 10
     oauth_scopes = [
       "https://www.googleapis.com/auth/compute",
       "https://www.googleapis.com/auth/devstorage.read_only",
