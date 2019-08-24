@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: app
+  labels:
+    app: app
+spec:
+  tls:
+  - hosts:
+    - app.iac.st-corp.ru
+    secretName: app-tls
+  rules:
+    - host: app.iac.st-corp.ru
+      http:
+        paths:
+        - path: /
+          backend:
+            serviceName: app
+            servicePort: 5000
