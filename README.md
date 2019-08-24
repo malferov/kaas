@@ -21,3 +21,14 @@ terraform init -backend-config=backend.hcl
 terraform apply
 export KUBECONFIG=.kube/config
 ```
+```
+# example app
+cd example
+terraform apply
+kubectl apply -f manifest/app.yaml
+kubectl apply -f manifest/service.yaml
+kubectl apply -f manifest/secret.yaml
+kubectl apply -f manifest/ingress.yaml
+./ip_address.sh
+terraform apply -target=aws_route53_record.app
+```

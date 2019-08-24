@@ -2,7 +2,7 @@ variable "master_user" {}
 variable "master_pass" {}
 
 locals {
-  kubeconfig = <<KUBECONFIG
+  kube_config = <<KUBECONFIG
 apiVersion: v1
 clusters:
 - cluster:
@@ -23,10 +23,9 @@ users:
     username: ${var.master_user}
     password: ${var.master_pass}
 KUBECONFIG
-
 }
 
-resource "local_file" "kubeconfig" {
-  content  = local.kubeconfig
+resource "local_file" "kube_config" {
+  content  = local.kube_config
   filename = ".kube/config"
 }

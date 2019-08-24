@@ -1,3 +1,5 @@
+variable "ip_address" {}
+
 data "aws_route53_zone" "zone" {
   name = var.domain
 }
@@ -9,6 +11,6 @@ resource "aws_route53_record" "app" {
   ttl     = "60"
 
   records = [
-    "kubectl get ingress app -o=json | jq .status.loadBalancer.ingress[].ip",
+    var.ip_address
   ]
 }
