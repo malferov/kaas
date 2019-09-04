@@ -26,10 +26,10 @@ export KUBECONFIG=.kube/config
 cd example
 terraform apply
 cd manifest
-kubectl apply -f app.yaml
-kubectl apply -f service.yaml
-kubectl apply -f secret.yaml
-kubectl apply -f ingress.yaml
+kubectl apply -f app.yml
+kubectl apply -f service.yml
+kubectl apply -f secret.yml
+kubectl apply -f ingress.yml
 cd .. && ./ip_address.sh
 terraform apply -target=aws_route53_record.app
 ```

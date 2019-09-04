@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: app
-        image: docker.io/malferov/app:1
+        image: docker.io/malferov/vk-felix:3
         ports:
-        - containerPort: 5000
+        - containerPort: 80
