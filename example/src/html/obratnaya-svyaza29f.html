@@ -1,0 +1,445 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru-ru" lang="ru-ru" dir="ltr" >
+
+<!-- Mirrored from vk-felix.ru/obratnaya-svyaz.html?view=message&layout=message&pf=3 by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 08 Sep 2019 15:51:23 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+	  <base  />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <title>Запись на операцию</title>
+  <link href="http://vk-felix.ru/templates/felix/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+  <link rel="stylesheet" href="http://vk-felix.ru/media/system/css/calendar-jos.css" type="text/css"  title="green"  media="all" />
+  <link rel="stylesheet" href="http://vk-felix.ru/components/com_aicontactsafe/includes/css/aicontactsafe_general.css" type="text/css" />
+  <link rel="stylesheet" href="http://vk-felix.ru/media/aicontactsafe/cssprofiles/profile_css_3.css" type="text/css" />
+  <script type="text/javascript" src="http://vk-felix.ru/media/system/js/mootools.js"></script>
+  <script type="text/javascript" src="http://vk-felix.ru/media/plg_jblibrary/jquery/jquery-1.6.2.min.js"></script><script type="text/javascript">jQuery.noConflict();</script>
+  <script type="text/javascript" src="http://vk-felix.ru/media/plg_jblibrary/jquery/jquery.noconflict.js"></script>
+  <script type="text/javascript" src="http://vk-felix.ru/includes/js/joomla.javascript.js"></script>
+  <script type="text/javascript" src="http://vk-felix.ru/media/system/js/calendar.js"></script>
+  <script type="text/javascript" src="http://vk-felix.ru/media/system/js/calendar-setup.js"></script>
+  <script type="text/javascript" src="../api.recaptcha.net/js/recaptcha_ajax.html"></script>
+  <script type="text/javascript">
+Calendar._DN = new Array ("Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье");Calendar._SDN = new Array ("Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"); Calendar._FD = 0;	Calendar._MN = new Array ("Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь");	Calendar._SMN = new Array ("Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек");Calendar._TT = {};Calendar._TT["INFO"] = "О календаре";
+ 		Calendar._TT["ABOUT"] =
+ "DHTML Date/Time Selector\n" +
+ "(c) dynarch.com 2002-2005 / Author: Mihai Bazon\n" +
+"For latest version visit: http://www.dynarch.com/projects/calendar/\n" +
+"Distributed under GNU LGPL.  See http://gnu.org/licenses/lgpl.html for details." +
+"\n\n" +
+"Date selection:\n" +
+"- Use the \xab, \xbb buttons to select year\n" +
+"- Use the " + String.fromCharCode(0x2039) + ", " + String.fromCharCode(0x203a) + " buttons to select month\n" +
+"- Hold mouse button on any of the above buttons for faster selection.";
+Calendar._TT["ABOUT_TIME"] = "\n\n" +
+"Time selection:\n" +
+"- Click on any of the time parts to increase it\n" +
+"- or Shift-click to decrease it\n" +
+"- or click and drag for faster selection.";
+
+		Calendar._TT["PREV_YEAR"] = "Кликните для перехода на предыдущий год. Кликните и удерживайте кнопку для списка лет.";Calendar._TT["PREV_MONTH"] = "Кликните для перехода на предыдущий месяц. Кликните и удерживайте кнопку для списка месяцев.";	Calendar._TT["GO_TODAY"] = "К сегодня";Calendar._TT["NEXT_MONTH"] = "Кликните для перехода на следующий месяц. Кликните и удерживайте кнопку для списка месяцев.";Calendar._TT["NEXT_YEAR"] = "Кликните для перехода на следующий год. Кликните и удерживайте кнопку для списка лет.";Calendar._TT["SEL_DATE"] = "Выберите дату.";Calendar._TT["DRAG_TO_MOVE"] = "Тяните, чтобы переместить";Calendar._TT["PART_TODAY"] = "(Сегодня)";Calendar._TT["DAY_FIRST"] = "Показать первые %s";Calendar._TT["WEEKEND"] = "0,6";Calendar._TT["CLOSE"] = "Закрыть";Calendar._TT["TODAY"] = "Сегодня";Calendar._TT["TIME_PART"] = "(Shift-) Клик или потяните, чтобы изменить значение.";Calendar._TT["DEF_DATE_FORMAT"] = "%Y-%m-%d"; Calendar._TT["TT_DATE_FORMAT"] = "%A, %B %e";Calendar._TT["WK"] = "wk";Calendar._TT["TIME"] = "Время:";window.addEvent('domready', function() {Calendar.setup({
+        inputField     :    "aics_date_3",     // id of the input field
+        ifFormat       :    "%Y-%m-%d",      // format of the input field
+        button         :    "aics_date_3_img",  // trigger for the calendar (button ID)
+        align          :    "Tl",           // alignment (defaults to "Bl")
+        singleClick    :    true
+    });});
+	//<![CDATA[
+	<!--
+	function resetSubmit( pf ) {
+		$('adminForm_'+pf).addEvent('submit', function(e) {
+			new Event(e).stop();
+			this.send({
+				onRequest: function(){ 
+										document.getElementById('adminForm_'+pf).elements['task'].value = 'ajaxform'; 
+										document.getElementById('adminForm_'+pf).elements['use_ajax'].value = '1';
+										$('aiContactSafeSend_loading_'+pf).setHTML('&nbsp;&nbsp;Пожалуйста, подождите ...&nbsp;<img id="imgLoading" border="0" src="http://vk-felix.ru/components/com_aicontactsafe/includes/images/load.gif" />&nbsp;&nbsp;');
+										document.getElementById('adminForm_'+pf).elements['aiContactSafeSendButton'].disabled = true;
+									},
+				onComplete: function() { 
+										$('displayAiContactSafeForm_'+pf).setHTML( this.response.text );
+										changeCaptcha(pf,0); 
+										document.getElementById('adminForm_'+pf).elements['aiContactSafeSendButton'].removeAttribute('disabled');
+										if (document.getElementById('adminForm_'+pf).elements['ajax_return_to']) {
+											var ajax_return_to = document.getElementById('adminForm_'+pf).elements['ajax_return_to'].value;
+											if (ajax_return_to.length > 0) {
+												window.location = ajax_return_to;
+											}
+										} else {
+											if (document.getElementById('adminForm_'+pf).elements['ajax_message_sent']) {
+												var return_to = document.getElementById('adminForm_'+pf).elements['return_to'].value;
+												return_to = return_to.replace('&#38;', '&');
+												var current_url = document.getElementById('adminForm_'+pf).elements['current_url'].value;
+												current_url = current_url.replace('&#38;', '&');
+												if (return_to.length > 0 && return_to != current_url) {													
+													window.location = return_to;
+												}
+											}
+										}
+										$('aiContactSafeSend_loading_'+pf).setHTML('&nbsp;');
+										setupCalendars(pf);
+									}
+			});
+		});
+	}
+	function checkEditboxLimit( pf, editbox_id, chars_limit ){
+		if (document.getElementById('adminForm_'+pf).elements[editbox_id]) {
+			if (document.getElementById('adminForm_'+pf).elements[editbox_id].value.length > chars_limit) {
+				alert('Превышено максимально допустимое число символов !');
+				document.getElementById('adminForm_'+pf).elements[editbox_id].value = document.getElementById('adminForm_'+pf).elements[editbox_id].value.substring(0,chars_limit);
+			} else {
+				if (document.getElementById('adminForm_'+pf).elements['countdown_'+editbox_id]) {
+					document.getElementById('adminForm_'+pf).elements['countdown_'+editbox_id].value = chars_limit - document.getElementById('adminForm_'+pf).elements[editbox_id].value.length;
+				}
+			}
+		}
+	}
+	function changeCaptcha( pf, modifyFocus ) {
+		if (document.getElementById('div_captcha_img_'+pf)) {
+			var set_rand = Math.floor(Math.random()*10000000001);
+			var r_id = document.getElementById('adminForm_'+pf).elements['r_id'].value;
+			var captcha_file = 'index166f.html?option=com_aicontactsafe&amp;sTask=captcha&amp;task=captcha&amp;pf='+pf+'&r_id='+r_id+'&lang=&format=raw&set_rand='+set_rand;
+			if (window.ie6) {
+				var url = 'index6999.html?option=com_aicontactsafe&amp;sTask=captcha&amp;task=newCaptcha&amp;pf='+pf+'&r_id='+r_id+'&lang=&format=raw&set_rand='+set_rand;
+				new Ajax(url, {
+					method: 'get',
+					update: $('div_captcha_img_'+pf),
+					onRequest: function(){ $('div_captcha_img_'+pf).setHTML('Пожалуйста, подождите ...'); }
+				}).request();
+			} else {
+				$('div_captcha_img_'+pf).setHTML( '<img src="'+captcha_file+'" alt="&nbsp;" id="captcha" border="0" />' );
+			}
+			if (modifyFocus && document.getElementById('captcha-code')) {
+				document.getElementById('captcha-code').focus();
+			}
+		}
+		if (document.getElementById('aiContactSafe_form_'+pf) || document.getElementById('aiContactSafe_module_'+pf)) {
+			if (document.getElementById('reCaptchaReset')) {
+				if (document.getElementById('reCaptchaReset').value == 1 && document.getElementById('recaptcha_div')) {
+					if (document.getElementById('reCaptchaPublicKey')) {
+						var reCaptchaPublicKey = document.getElementById('reCaptchaPublicKey').value;
+					} else {
+						var reCaptchaPublicKey = '';
+					}
+					if (document.getElementById('reCaptchaTheme')) {
+						var reCaptchaTheme = document.getElementById('reCaptchaTheme').value;
+					} else {
+						var reCaptchaTheme = '';
+					}
+					Recaptcha.create(reCaptchaPublicKey, 'recaptcha_div',  { theme:reCaptchaTheme });
+				}
+			}
+		}
+		if (document.getElementById('captcha-code')) {
+			$('captcha-code').value = '';
+		} else if (document.getElementById('captcha_code')) {
+			$('captcha_code').value = '';
+		} else if (document.getElementById('mathguard_answer')) {
+			$('mathguard_answer').value = '';
+		} else if (document.getElementById('recaptcha_response_field')) {
+			$('recaptcha_response_field').value = '';
+		}
+	}
+	function setDate( pf, newDate, idDate ) {
+		if (document.getElementById('adminForm_'+pf).elements['day_'+idDate]) {
+			document.getElementById('adminForm_'+pf).elements['day_'+idDate].value = newDate.substr(8,2);
+		}
+		if (document.getElementById('adminForm_'+pf).elements['month_'+idDate]) {
+			var selMonth = newDate.substr(5,2);
+			if(selMonth.substr(0,1) == '0') {
+				selMonth = selMonth.substr(1,1);
+			}
+			selMonth = parseInt(selMonth) - 1;
+			document.getElementById('adminForm_'+pf).elements['month_'+idDate].options[selMonth].selected = true;
+		}
+		if (document.getElementById('adminForm_'+pf).elements['year_'+idDate]) {
+			document.getElementById('adminForm_'+pf).elements['year_'+idDate].value = newDate.substr(0,4);
+		}
+	}
+	function daysInFebruary( year ){
+		var days = (((year % 4 == 0) && ( (!(year % 100 == 0)) || (year % 400 == 0))) ? 29 : 28 );
+		return days;
+	}
+	function daysInMonth( month, year ) {
+		var days = 31;
+		switch( true ) {
+			case month == 2 :
+				days = daysInFebruary( year );
+				break;
+			case month == 4 || month == 6 || month == 9 || month == 11 :
+				days = 30;
+				break;
+		}
+	   return days;
+	}
+	function checkDate( pf, idDate ) {
+		var year = 0;
+		var month = 0;
+		var day = 0;
+		if (document.getElementById('adminForm_'+pf).elements['year_'+idDate]) {
+			year = document.getElementById('adminForm_'+pf).elements['year_'+idDate].value;
+		}
+		if (document.getElementById('adminForm_'+pf).elements['month_'+idDate]) {
+			month = document.getElementById('adminForm_'+pf).elements['month_'+idDate].value;
+		}
+		if (document.getElementById('adminForm_'+pf).elements['day_'+idDate]) {
+			day = document.getElementById('adminForm_'+pf).elements['day_'+idDate].value;
+		}
+		if (day > 0 && month > 0 && year > 0) {
+			var days = daysInMonth( month, year );
+			if (day > days) {
+				day = days;
+				document.getElementById('adminForm_'+pf).elements['day_'+idDate].value = days;
+				var error = 'В указанном месяце колличество дней - %days% ! Сначала укажите месяц.';
+				alert( error.replace( '%days%', days ) );
+			}
+		}
+		if (document.getElementById('adminForm_'+pf).elements[idDate]) {
+			document.getElementById('adminForm_'+pf).elements[idDate].value = year+'-'+month+'-'+day;
+		}
+	}
+	function clickCheckBox( pf, idTag, ckChecked ) {
+		document.getElementById('adminForm_'+pf).elements[idTag].value = ckChecked?1:0;
+	}
+	function hideUploadField(file_field, pf) {
+		$('upload_'+pf+'_file_'+file_field).setStyle('display','none');
+	}
+	function showUploadField(file_field, pf) {
+		$('upload_'+pf+'_file_'+file_field).setStyle('display','inline');
+	}
+	function resetUploadField(file_field, pf) {
+		var var_file_field = "'"+file_field+"'";
+		$('upload_'+pf+'_file_'+file_field).setHTML('<input type="file" name="'+file_field+'" id="'+file_field+'" onchange="startUploadFile('+var_file_field+','+pf+')" />');
+	}
+	function hideFileField(file_field, pf) {
+		$('cancel_upload_'+pf+'_file_'+file_field).setStyle('display','none');
+	}
+	function showFileField(file_field, pf) {
+		$('cancel_upload_'+pf+'_file_'+file_field).setStyle('display','inline');
+	}
+	function hideWaitFileField(file_field, pf) {
+		$('wait_upload_'+pf+'_file_'+file_field).setStyle('display','none');
+	}
+	function showWaitFileField(file_field, pf) {
+		$('wait_upload_'+pf+'_file_'+file_field).setStyle('display','inline');
+	}
+	function cancelUploadFile(file_field, pf) {
+		hideFileField(file_field, pf);
+		deleteUploadedFile(file_field, pf);
+		$('adminForm_'+pf).elements[file_field+'_attachment_name'].value = '';
+		$('adminForm_'+pf).elements[file_field+'_attachment_id'].value = '';
+		resetUploadField(file_field, pf);
+		showUploadField(file_field, pf);
+	}
+	function deleteUploadedFile(file_field, pf) {
+		var file_name = $('adminForm_'+pf).elements[file_field+'_attachment_name'].value;
+		var r_id = document.getElementById('adminForm_'+pf).elements['r_id'].value;
+		var url = 'index12a3.html?option=com_aicontactsafe&amp;sTask=message&amp;task=deleteUploadedFile&amp;filename='+file_name+'&r_id='+r_id+'&format=raw'
+		new Ajax(url, { method: 'get' }).request();
+	}
+	function startUploadFile(file_field, pf) {
+		var r_id = document.getElementById('adminForm_'+pf).elements['r_id'].value;
+		$('adminForm_'+pf).setProperty('action','index07e8.html?option=com_aicontactsafe&amp;field='+file_field+'&r_id='+r_id+'&format=raw');
+		$('adminForm_'+pf).setProperty('target','iframe_upload_file_'+pf+'_file_'+file_field);
+		$('adminForm_'+pf).elements['task'].value = 'uploadFile';
+		hideUploadField(file_field, pf);
+		hideFileField(file_field, pf);
+		showWaitFileField(file_field, pf);
+		$('adminForm_'+pf).submit();
+		resetUploadField(file_field, pf);
+	}
+	function endUploadFile(pf, file_field, attachment_name, attachment_id, error_type, error_message) {
+		error_type = parseInt(error_type);
+		hideWaitFileField(file_field, pf);
+		switch( error_type ) {
+			case 0 :
+				$('adminForm_'+pf).elements[file_field+'_attachment_name'].value = attachment_name;
+				$('adminForm_'+pf).elements[file_field+'_attachment_id'].value = attachment_id;
+				showFileField(file_field, pf);
+				break;
+			case 1 :
+				alert('Этот тип вложения не дозволен ! ( '+error_message+' ) ');
+				cancelUploadFile(file_field, pf);
+				break;
+			case 2 :
+				alert('Файл слишком велик ! ( '+error_message+' ) ');
+				cancelUploadFile(file_field, pf);
+				break;
+			case 3 :
+				alert('Другая ошибка ! ( '+error_message+' ) ');
+				cancelUploadFile(file_field, pf);
+				break;
+		}
+		resetSendButtonTarget(pf);
+	}
+	function resetSendButtonTarget(pf) {
+		$('adminForm_'+pf).setProperty('action','index-2.html');
+		$('adminForm_'+pf).setProperty('target','_self');
+		$('adminForm_'+pf).elements['task'].value = 'message';
+	}
+	function setupCalendars(pf) {
+		var calendars_imgs = $$('#adminForm_'+pf+' img.calendar');
+		var countCalendars = calendars_imgs.length;
+		for(var i=0;i<countCalendars;i++) {
+			var imgid = calendars_imgs[i].getProperty('id');
+			if (imgid.substr(imgid.length-4)=='_img') {
+				fieldid = imgid.substr(0,imgid.length-4);
+				Calendar.setup({inputField : fieldid, ifFormat: "%Y-%m-%d", button : imgid, align : "Tl", singleClick : true});
+			}
+		}
+	}
+	//-->
+	//]]>
+
+			//<![CDATA[
+			<!--
+			window.addEvent('load', function() {
+				changeCaptcha(3,0);
+
+			});
+			//-->
+			//]]>
+		
+  </script>
+
+	<link rel="stylesheet" href="http://vk-felix.ru/templates/felix/css/layout.css" type="text/css" />
+	<!--[if IE 6]>
+	<link rel="stylesheet" href="/templates/felix/css/ie6.css" type="text/css" />
+	<![endif]-->
+	<!--[if IE 7]>
+	<link rel="stylesheet" href="/templates/felix/css/ie7.css" type="text/css" />
+	<![endif]-->
+	<!--[if IE 8]>
+	<link rel="stylesheet" href="/templates/felix/css/ie8.css" type="text/css" />
+	<![endif]-->
+	
+	<!-- Jquery scripts (Jquery должен быть ранее подключен для работы этих скриптов) -->
+	<script type="text/javascript" src="http://vk-felix.ru/templates/felix/js/main.js"></script>
+</head>
+<body class="not-front leftbar">
+	<div id="page-wrapper">
+		<div id="page-inner">
+			<div id="header">
+				<div id="header-inner">
+					<div id="header-inner-inner">
+													<a id="logo" href="index.html"></a>
+												<div id="pop-txt"><span class="blue">клиника</span> 540-400<br>
+8-951-220-6716<br>
+<span class="blue">аптека</span> 540-444<br></div>
+											</div>
+				</div>
+			</div>
+			<div id="main">
+				<div id="main-inner">
+										<div id="cmain">
+						<div id="cmain-top"></div>
+						<div id="cmain-middle">
+															<div id="leftbar">
+									<div id="leftbar-inner">
+											<div class="bar_block block_menu">
+				<div class="content-wrapper">
+			<div class="content">
+				<ul class="menu"><li class="item1"><a href="index.html"><span>На Главную</span></a></li><li class="item112"><a href="kogda-nuzhno-obratitsya-k-vrachu.html"><span>Когда нужно обратиться к врачу</span></a></li><li class="item113"><a href="norma-zhiznennyh-pokazatelej-zhivotnyh.html"><span>Норма жизненных показателей животных</span></a></li><li class="item114"><a href="uslugi.html"><span>Услуги</span></a></li><li class="item122"><a href="ceny.html"><span>Цены</span></a></li><li class="item115"><a href="stati.html"><span>Статьи</span></a></li><li id="current" class="active item117"><a href="obratnaya-svyaz.html"><span>Записаться на операцию</span></a></li><li class="item116"><a href="kontakty.html"><span>О клинике</span></a></li></ul>			</div>
+		</div>
+	</div>
+
+									</div>
+								</div>
+														<div id="center">
+								<div id="center-inner">
+									<div id="message"></div>
+									<div id="com_block">
+<div class="aiContactSafe" id="aiContactSafe_mainbody_3">
+<div class="componentheading"><h1>Запись на операцию</h1></div>
+<div class="contentpaneopen">
+			<div id="aiContactSafeForm" style="width:500px;" >
+				<form action="http://vk-felix.ru/index.php" method="post" id="adminForm_3" name="adminForm_3" enctype="multipart/form-data">		<div id="displayAiContactSafeForm_3">
+				<div class="aiContactSafe" id="aiContactSafe_contact_form">
+				<div class="aiContactSafe" id="aiContactSafe_info"></div>
+										<div class="aiContactSafe_row" id="aiContactSafe_row_aics_name"><div class="aiContactSafe_contact_form_field_label_left"><span class="aiContactSafe_label" id="aiContactSafe_label_aics_name" ><label for="aics_name" >Ваше имя</label></span>&nbsp;<label class="required_field">*</label></div><div class="aiContactSafe_contact_form_field_right"><input type="text" name="aics_name" id="aics_name"  class='textbox' value="" /></div></div>
+									<div class="aiContactSafe_row" id="aiContactSafe_row_aics_email"><div class="aiContactSafe_contact_form_field_label_left"><span class="aiContactSafe_label" id="aiContactSafe_label_aics_email" ><label for="aics_email" >Email</label></span>&nbsp;</div><div class="aiContactSafe_contact_form_field_right"><input type="text" name="aics_email" id="aics_email"  class='email' value="" /></div></div>
+									<div class="aiContactSafe_row" id="aiContactSafe_row_aics_phone"><div class="aiContactSafe_contact_form_field_label_left"><span class="aiContactSafe_label" id="aiContactSafe_label_aics_phone" ><label for="aics_phone" >Телефон</label></span>&nbsp;<label class="required_field">*</label></div><div class="aiContactSafe_contact_form_field_right"><input type="text" name="aics_phone" id="aics_phone" maxlength="50" class='textbox' value="" /></div></div>
+									<div class="aiContactSafe_row" id="aiContactSafe_row_aics_date"><div class="aiContactSafe_contact_form_field_label_left"><span class="aiContactSafe_label" id="aiContactSafe_label_aics_date_3" Желательный день приёма><label for="aics_date_3" Желательный день приёма>Желательный день приёма</label></span>&nbsp;<label class="required_field">*</label></div><div class="aiContactSafe_contact_form_field_right"><div id="div_aics_date_3" class="aics_date_3" ><table id="table_aics_date_3" class="aiContactSafe_date" border="0" cellpadding="0" cellspacing="0"><tr><td><select name="day_aics_date_3" id="day_aics_date_3" onchange="checkDate(3,'aics_date_3')" ><option value="01"   >01</option><option value="02"   >02</option><option value="03"   >03</option><option value="04"   >04</option><option value="05"   >05</option><option value="06"   >06</option><option value="07"   >07</option><option value="08" selected="selected"  >08</option><option value="09"   >09</option><option value="10"   >10</option><option value="11"   >11</option><option value="12"   >12</option><option value="13"   >13</option><option value="14"   >14</option><option value="15"   >15</option><option value="16"   >16</option><option value="17"   >17</option><option value="18"   >18</option><option value="19"   >19</option><option value="20"   >20</option><option value="21"   >21</option><option value="22"   >22</option><option value="23"   >23</option><option value="24"   >24</option><option value="25"   >25</option><option value="26"   >26</option><option value="27"   >27</option><option value="28"   >28</option><option value="29"   >29</option><option value="30"   >30</option><option value="31"   >31</option></select></td><td><select name="month_aics_date_3" id="month_aics_date_3" onchange="checkDate(3,'aics_date_3')" ><option value="01"   >Январь</option><option value="02"   >Февраль</option><option value="03"   >Март</option><option value="04"   >Апрель</option><option value="05"   >Май</option><option value="06"   >Июнь</option><option value="07"   >Июль</option><option value="08"   >Август</option><option value="09" selected="selected"  >Сентябрь</option><option value="10"   >Октябрь</option><option value="11"   >Ноябрь</option><option value="12"   >Декабрь</option></select></td><td><select name="year_aics_date_3" id="year_aics_date_3" onchange="checkDate(3,'aics_date_3')" ><option value="2019" selected="selected"  >2019</option><option value="2020"   >2020</option></select></td><td><input type="text" name="aics_date_3" id="aics_date_3" value="2019-09-08" class="aiContactSafe_dateinputbox" size="1" onchange="setDate(3,this.value,'aics_date_3')" style="display:none;" /><img class="calendar" src="http://vk-felix.ru/templates/system/images/calendar.png" alt="calendar" id="aics_date_3_img" /></td></tr></table></div></div></div>
+									<div class="aiContactSafe_row" id="aiContactSafe_row_aics_time"><div class="aiContactSafe_contact_form_field_label_left"><span class="aiContactSafe_label" id="aiContactSafe_label_aics_time" ><label for="aics_time" >Желательное время приёма</label></span>&nbsp;<label class="required_field">*</label></div><div class="aiContactSafe_contact_form_field_right"><input type="text" name="aics_time" id="aics_time" maxlength="50"  value="" /></div></div>
+									<div class="aiContactSafe_row" id="aiContactSafe_row_aics_age"><div class="aiContactSafe_contact_form_field_label_left"><span class="aiContactSafe_label" id="aiContactSafe_label_aics_age" ><label for="aics_age" >Возраст животного</label></span>&nbsp;</div><div class="aiContactSafe_contact_form_field_right"><select name="aics_age" id="aics_age" ><option value="0" >Менее года</option><option value="1" >
+1 год</option><option value="2" >
+2 года</option><option value="3" >
+3 года</option><option value="4" >
+4 года</option><option value="5" >
+5 лет</option><option value="6" >
+6 лет</option><option value="7" >
+7 лет</option><option value="8" >
+8 лет</option><option value="9" >
+9 лет</option><option value="10" >
+10 лет</option><option value="11" >
+11 лет</option><option value="12" >
+12 лет</option><option value="13" >
+13 лет</option><option value="14" >
+14 лет</option><option value="15" >
+15 лет</option><option value="16" >
+16 лет</option><option value="17" >
+17 лет</option><option value="18" >
+18 лет</option><option value="19" >
+19 лет</option><option value="20" >
+20 лет</option><option value="21" >
+Старше 20 лет</option></select></div></div>
+									<div class="aiContactSafe_row" id="aiContactSafe_row_aics_service"><div class="aiContactSafe_contact_form_field_label_left"><span class="aiContactSafe_label" id="aiContactSafe_label_aics_service" ><label for="aics_service" >Вид услуги</label></span>&nbsp;<label class="required_field">*</label></div><div class="aiContactSafe_contact_form_field_right"><select name="aics_service" id="aics_service" ><option value="0" >Выберите вид услуги</option><option value="1" >
+Стерилизация</option><option value="2" >
+Кастрация</option><option value="3" >
+Другое </option></select></div></div>
+									<div class="aiContactSafe_row" id="aiContactSafe_row_aics_animal"><div class="aiContactSafe_contact_form_field_label_left"><span class="aiContactSafe_label" id="aiContactSafe_label_aics_animal" ><label for="aics_animal" >Вид животного</label></span>&nbsp;<label class="required_field">*</label></div><div class="aiContactSafe_contact_form_field_right"><input type="text" name="aics_animal" id="aics_animal" maxlength="50"  value="" /></div></div>
+									<div class="aiContactSafe_row" id="aiContactSafe_row_aics_mass"><div class="aiContactSafe_contact_form_field_label_left"><span class="aiContactSafe_label" id="aiContactSafe_label_aics_mass" ><label for="aics_mass" >Вес животного</label></span>&nbsp;</div><div class="aiContactSafe_contact_form_field_right"><input type="text" name="aics_mass" id="aics_mass" maxlength="50"  value="" /></div></div>
+									<div class="aiContactSafe_row" id="aiContactSafe_row_aics_message"><div class="aiContactSafe_contact_form_field_label_left"><span class="aiContactSafe_label" id="aiContactSafe_label_aics_message" ><label for="aics_message" >Сообщение</label></span>&nbsp;</div><div class="aiContactSafe_contact_form_field_right"><textarea name="aics_message" id="aics_message" cols="40" rows="10" class='editbox' onkeydown="checkEditboxLimit(3,'aics_message', 1000)" onkeyup="checkEditboxLimit(3,'aics_message',1000)" onchange="checkEditboxLimit(3,'aics_message',1000)"></textarea><br /><div class="countdown_div">У вас<input type="text" readonly="readonly" class="countdown_editbox" name="countdown_aics_message" id="countdown_aics_message" size="4" value="1000" />осталось символов.</div></div></div>
+					</div>
+					</div>
+			<br clear="all" />
+								<div id="div_captcha">
+						<div id="div_captcha_info">Введите код проверки:</div>
+						<div id="div_captcha_img"><div id="div_captcha_img_3" style="width:300px;height:55px;">...</div></div>
+						<div id="div_captcha_new">
+							<a href="javascript:void(0);" onclick="changeCaptcha(3,1);"
+								id="change-image">Не читабельно? Изменить код.</a>
+						</div>
+						<div style="margin-top:5px;" id="div_captcha_code"><input type="text" name="captcha-code" id="captcha-code" /></div>
+					</div>
+								<br clear="all" />
+			<div id="aiContactSafeBtns"><div id="aiContactSafeButtons_left" style="clear:both; display:block; width:100%; text-align:left;"><div id="aiContactSafeSend" style="float:left;"><div id="aiContactSafeSend_loading_3" style="float:left; margin:2px;">&nbsp;</div><input type="submit" id="aiContactSafeSendButton" value="Отправить" style="float:left; margin:2px;" /></div></div></div>
+			<br clear="all" />
+		<input type="hidden" id="option" name="option" value="com_aicontactsafe" /><input type="hidden" id="sTask" name="sTask" value="message" /><input type="hidden" id="task" name="task" value="display" /><input type="hidden" id="send_mail" name="send_mail" value="1" /><input type="hidden" id="pf" name="pf" value="3" /><input type="hidden" id="return_to" name="return_to" value="" /><input type="hidden" id="current_url" name="current_url" value="obratnaya-svyaza29f.html?view=message&amp;layout=message&amp;pf=3" /><input type="hidden" id="Itemid" name="Itemid" value="117" /><input type="hidden" id="lang" name="lang" value="" /><input type="hidden" id="back_button" name="back_button" value="0" /><input type="hidden" id="boxchecked" name="boxchecked" value="0" /><input type="hidden" id="use_ajax" name="use_ajax" value="0" /><input type="hidden" id="r_id" name="r_id" value="1880356395" /><input type="hidden" name="f88eccf6510d814029f9bf92973c43ae" value="1" /></form>				</div>
+	</div>
+</div></div>
+								</div>
+								<div class="clear"></div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div id="cmain-bottom"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+		<div id="footer-inner">
+			<div id="f-main">
+				<div id="f-menu"><table width="100%" border="0" cellpadding="0" cellspacing="1"><tr><td nowrap="nowrap"><a href="index.html" class="mainlevel" >Главная</a><span class="mainlevel"> | </span><a href="ceny.html" class="mainlevel" >Цены</a><span class="mainlevel"> | </span><a href="obratnaya-svyaz.html" class="mainlevel" id="active_menu">Запись на операции</a><span class="mainlevel"> | </span><span class="mainlevel"> | </span><a href="kontakty.html" class="mainlevel" >Контакты</a></td></tr></table></div>
+				<div id="f-text"><table style="width: 396px; margin-left: auto; margin-right: auto; height: 87px;" border="0" align="center">
+<tbody>
+<td>
+<p><a href="http://zoovetfarm.pulscen.ru/" target="_blank"><img src="http://vk-felix.ru/images/stories/bannerfans_9677102.png" alt="bannerfans 9677102" width="272" height="93" /></a></p>
+</td>
+</tr>
+</tbody>
+</table><div class="fooo">
+<p>© 2013, Больница для Животных “Феликс”, тел. (3842) 54-04-00, +7-951-220-6716</p>
+</div></div>
+			</div>
+			<a id="f-logo" href="index.html"></a>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from vk-felix.ru/obratnaya-svyaz.html?view=message&layout=message&pf=3 by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 08 Sep 2019 15:51:26 GMT -->
+</html>
