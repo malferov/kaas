@@ -8,6 +8,7 @@ spec:
   selector:
     matchLabels:
       app: app
+  replicas: 1
   template:
     metadata:
       labels:
@@ -15,6 +16,6 @@ spec:
     spec:
       containers:
       - name: app
-        image: docker.io/malferov/vk-felix:3
+        image: docker.io/malferov/vk-felix:4
         ports:
         - containerPort: 80

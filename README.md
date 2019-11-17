@@ -3,10 +3,10 @@ Kubernetes-as-a-Service is a managed service that enables you to run containeriz
 
 ### How it works
 You register yourself as a `tenant` and choose `free` or `buisness` plan. The platform generates an access token and tenant domain. There are few services available under tenant domain
- - https://manage.{TENANT_DOMAIN} dashboard to manage your workload
- - https://logs.{TENANT_DOMAIN} centralized logging
- - https://repo.{TENANT_DOMAIN} container repository
- - https://rbac.{TENANT_DOMAIN} dashboard to manage security
+ - https://admin.<tenant_domain> dashboard to manage your workload
+ - https://logs.<tenant_domain> centralized logging
+ - https://reg.<tenant_domain> container registry
+ - https://rbac.<tenant_domain> dashboard to manage security
 
 ### Pricing model
 For students, open-source developers or hobby projects, we offer a generous free tier.
