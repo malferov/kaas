@@ -1,5 +1,5 @@
 # KaaS
-Kubernetes-as-a-Service is a managed service that enables you to run containerized applications in a preprovisioned shared cluster. Running containerized applications securely and efficiently is a complex task and requires an expertise to build and maintain your own cluster. KaaS does these things for you, so you can focus on what is important for your software product.
+Kubernetes-as-a-Service is a managed service that enables you to run containerized applications in a preprovisioned shared cluster. Running containerized applications securely and efficiently is a complex task and requires an expertise to build and maintain your own cluster. KaaS does these things for you, so you can focus on what is important for your business.
 
 ### How it works
 You register yourself as a `tenant` and choose `free` or `buisness` plan. The platform generates an access token and tenant domain. There are few services available under tenant domain
