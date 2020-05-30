@@ -14,15 +14,21 @@ For students, open-source developers or hobby projects, we offer a generous free
 ### Development
 The platform uses Infrastructure as Code and Continuous Delivery principles via Terraform and Github Actions frameworks.
 ```
+# install terraform
+curl -LO https://releases.hashicorp.com/terraform/0.12.25/terraform_0.12.25_linux_amd64.zip
+unzip ./terraform_0.12.25_linux_amd64.zip
+sudo mv ./terraform /usr/local/bin
+
 # setup local environment
 git checkout master
-echo $token > backend.hcl
+echo $token >> backend.hcl
 terraform init -backend-config=backend.hcl
 terraform apply
+terraform state show google_container_cluster.kube | grep endpoint
 export KUBECONFIG=.kube/config
 ```
+Example app
 ```
-# example app
 cd example
 terraform apply
 cd manifest
