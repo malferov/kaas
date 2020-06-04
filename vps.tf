@@ -1,34 +1,9 @@
-variable "private_key" {}
-variable "region" {}
+variable "public_key" {}
 
 locals {
   service = "kaas"
-  image   = "centos-7-x64"
-  size    = "s-2vcpu-4gb"
-}
-
-resource "digitalocean_ssh_key" "ssh" {
-  name       = "ssh"
-  public_key = file(".key/${local.service}.pub")
-}
-
-resource "digitalocean_tag" "tag" {
-  name = local.service
-}
-
-resource "digitalocean_droplet" "droplet" {
-  image     = local.image
-  name      = local.service
-  region    = var.region
-  size      = local.size
-  ssh_keys  = [digitalocean_ssh_key.ssh.id]
-  tags      = [digitalocean_tag.tag.id]
-  user_data = file("user_data.sh")
-  lifecycle {
-    ignore_changes = [
-      user_data,
-    ]
-  }
+  image   = "centos_7.6"
+  type    = "DEV1-M"
 }
 
 resource "scaleway_instance_security_group" "sg" {
@@ -59,15 +34,15 @@ resource "scaleway_instance_ip" "ip" {}
 
 data "template_file" "user_data" {
   template = file("user_data.sh")
-  vars {
+  vars = {
     ip = scaleway_instance_ip.ip.id
   }
 }
 
 resource "scaleway_instance_server" "srv" {
-  type = "DEV1-M"
+  type = local.type
   // curl https://api-marketplace.scaleway.com/images | jq '.images[].label'
-  image             = "centos_7.6"
+  image             = local.image
   name              = local.service
   tags              = [local.service]
   ip_id             = scaleway_instance_ip.ip.id
@@ -77,10 +52,10 @@ resource "scaleway_instance_server" "srv" {
 
 resource "scaleway_account_ssh_key" "ssh" {
   name       = "ssh"
-  public_key = file(".key/${local.service}.pub")
+  public_key = var.public_key
 }
 
 output "server" {
   sensitive = true
-  value = scaleway_instance_server.srv.public_ip
+  value     = scaleway_instance_server.srv.public_ip
 }
