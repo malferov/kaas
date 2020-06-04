@@ -35,7 +35,7 @@ resource "scaleway_instance_ip" "ip" {}
 data "template_file" "user_data" {
   template = file("user_data.sh")
   vars = {
-    ip = scaleway_instance_ip.ip.id
+    ip = scaleway_instance_ip.ip.address
   }
 }
 
