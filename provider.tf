@@ -1,11 +1,16 @@
-variable "account_key" {}
-variable "project" {}
-variable "region" {}
-variable "zone" {}
+variable "do_token" {}
 
-provider "google" {
-  credentials = var.account_key
-  project     = var.project
-  region      = var.region
-  zone        = var.zone
+provider "digitalocean" {
+  token = var.do_token
+}
+
+variable "sw_access_key" {}
+variable "sw_secret_key" {}
+variable "sw_organization_id" {}
+
+provider "scaleway" {
+  access_key      = var.sw_access_key
+  secret_key      = var.sw_secret_key
+  organization_id = var.sw_organization_id
+  zone            = "fr-par-1"
 }
