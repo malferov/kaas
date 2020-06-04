@@ -24,8 +24,8 @@ git checkout master
 echo $token >> backend.hcl
 terraform init -backend-config=backend.hcl
 terraform apply
-terraform state show google_container_cluster.kube | grep endpoint
-export KUBECONFIG=.kube/config
+./kubeconfig.sh
+export KUBECONFIG=.key/admin.conf
 ```
 Example app
 ```
