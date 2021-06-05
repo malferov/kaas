@@ -51,8 +51,9 @@ resource "scaleway_instance_server" "srv" {
   cloud_init        = data.template_file.user_data.rendered
 }
 
-resource "reverse" "rev" {
-  name = "netping.org"
+resource "scaleway_instance_ip_reverse_dns" "rev" {
+  ip_id   = scaleway_instance_ip.ip.id
+  reverse = "netping.org"
 }
 
 resource "scaleway_account_ssh_key" "ssh" {
@@ -61,6 +62,6 @@ resource "scaleway_account_ssh_key" "ssh" {
 }
 
 output "server" {
-  sensitive = true
+  sensitive = false
   value     = scaleway_instance_server.srv.public_ip
 }

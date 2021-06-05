@@ -14,7 +14,7 @@ jobs:
       env:
         TF_VAR_sw_access_key: ${{ secrets.sw_access_key }}
         TF_VAR_sw_secret_key: ${{ secrets.sw_secret_key }}
-        TF_VAR_sw_organization_id: ${{ secrets.sw_organization_id }}
+        TF_VAR_sw_project_id: ${{ secrets.sw_project_id }}
         TF_VAR_public_key: ${{ secrets.public_key }}
         backend: ${{ secrets.backend }}
       run: |
