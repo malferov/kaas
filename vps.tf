@@ -24,6 +24,7 @@ resource "scaleway_instance_security_group" "sg" {
     action = "accept"
     port   = "443"
   }
+
   inbound_rule {
     action = "accept"
     port   = "80"
@@ -48,6 +49,10 @@ resource "scaleway_instance_server" "srv" {
   ip_id             = scaleway_instance_ip.ip.id
   security_group_id = scaleway_instance_security_group.sg.id
   cloud_init        = data.template_file.user_data.rendered
+}
+
+resource "reverse" "rev" {
+  name = "netping.org"
 }
 
 resource "scaleway_account_ssh_key" "ssh" {
